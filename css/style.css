@@ -1,0 +1,38 @@
+/* ---------- RESET ---------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* ---------- DESIGN TOKENS ---------- */
+:root{
+    --rail-navy: #0b2545;
+    --rail-navy-deep: #071a33;
+    --signal-amber: #f5a623;
+    --steel: #8d99ae;
+    --paper: #f2f4f7;
+    --brake-red: #c1440e;
+}
+
+/* ---------- BASE ---------- */
+body{
+    background: var(--paper);
+    color: var(--rail-navy-deep);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.5;
+}
+
+h1{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
