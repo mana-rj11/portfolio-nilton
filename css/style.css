@@ -154,3 +154,23 @@ nav a:hover{
     border-color: var(--signal-amber);
     color: var(--signal-amber);
 }
+
+.flap{
+    background: #050e1c;
+    border: 1px solid rgba(245, 166, 25, 0.25);
+    border-radius: 4px;
+    padding: 10px 6px;
+    min-width: 34px;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 4.6vw, 3.4rem);
+    color: var(--paper);
+    line-height: 1;
+}
+
+.flap.space{
+    background: transparent;
+    border: none;
+    min-width: 14px;
+}
