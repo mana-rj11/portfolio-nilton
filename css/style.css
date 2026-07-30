@@ -73,3 +73,84 @@ nav a{
 nav a:hover{
     color: var(--signal-amber);
 }
+
+/* ---------- HERO ---------- */
+.hero{
+    min-height: 90vh;
+    background: linear-gradient(180deg, var(--rail-navy) 0%, var(--rail-navy-deep) 100%);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 5vw;
+}
+
+.platform-tag{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    color: var(--signal-amber);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.board{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.hero-role{
+    font-family: 'IBM Plax Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--steel);
+    margin-bottom: 22px;
+    min-height: 1.6em;
+}
+
+.hero-desc{
+    max-width: 560px;
+    color: #c9d3e0;
+    font-size: 1.02rem;
+    margin-bottom: 32px;
+}
+
+.hero-cta{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn{
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 24px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.15s ease, background 0.2s ease, color 0.2 ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary{
+    background: var(--signal-amber);
+    color: var(--rail-navy-deep);
+}
+
+.btn-primary:hover{
+    transform: translateY(-2px);
+    background: #ffb943;
+}
+
+.btn-ghost{
+    border-color: rgba(242, 244, 247, 0.35);
+    color: var(-paper);
+}
+
+.btn-ghost:hover{
+    transform: translateY(-2px);
+    border-color: var(--signal-amber);
+    color: var(--signal-amber);
+}
