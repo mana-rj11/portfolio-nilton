@@ -174,3 +174,12 @@ nav a:hover{
     border: none;
     min-width: 14px;
 }
+
+.cursor{
+    color: var(--signal-amber);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink{
+    50% { opacity: 0; }
+}

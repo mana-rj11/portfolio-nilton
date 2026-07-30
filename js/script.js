@@ -12,3 +12,43 @@ target.split("").forEach(ch => {
     boardEl.appendChild(el);
     flapEls.push(el);
 });
+
+// ---------- MACHINE À ÉCRIRE : RÔLES ----------
+const roles = [
+    "Développeur Full Stack",
+    "Java · Spring Boot",
+    "Angular · TypeScript",
+    "PostgreSQL · Firebird"
+];
+
+const roleLine = document.getElementById('roleLine');
+let roleIdx = 0;
+let charIdx = 0;
+let deleting = false;
+
+function typeRole(){
+    const current = roles[roleIdx];
+
+    if(!deleting){
+        charIdx++;
+        roleLine.innerHTML = current.slice(0, charIdx) + '<span class="cursor">▌</span';
+
+        if(charIdx === current.length){
+            deleting = true;
+            setTimeout(typeRole, 1600);
+            return;
+        }
+    } else {
+        charIdx--;
+        roleLine.innerHTML = current.slice(0, charIdx) + '<span class="cursor">▌</span>';
+
+        if(charIdx == 0){
+            deleting = false;
+            roleIdx = (roleIdx + 1) % roles.length;
+        }
+    }
+
+    setTimeout(typeRole, deleting ? 25 : 55);
+}
+
+typeRole();
