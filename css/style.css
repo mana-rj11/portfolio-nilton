@@ -19,17 +19,16 @@ html{
     --brake-red: #c1440e;
 }
 
-/* ---------- BASE ---------- */
 body{
-    background: var(--paper);
-    color: var(--rail-navy-deep);
-    font-family: 'IBM Plex Sans', sans-serif;
-    line-height: 1.5;
+  background: var(--paper);
+  color: var(--rail-navy-deep);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
-h1{
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
+h1, h2, h3, .logo, .card h3{
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
 }
 
 a{
