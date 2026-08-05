@@ -83,3 +83,60 @@ navMenu.querySelectorAll('a').forEach(link => {
     navMenu.classList.remove('open');
   });
 });
+
+// ---------- TRAÎNÉE DE VAPEUR AU CURSEUR ----------
+const canvas = document.getElementById('steamCanvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function spawnParticle(x, y){
+  particles.push({
+    x: x + (Math.random() - 0.5) * 14,
+    y: y + (Math.random() - 0.5) * 14,
+    radius: 6 + Math.random() * 10,
+    life: 1,
+    speedX: (Math.random() - 0.5) * 1.4,
+    speedY: -0.5 - Math.random() * 1.1,
+    drift: (Math.random() - 0.5) * 0.02
+  });
+}
+
+window.addEventListener('mousemove', (e) => {
+  // Plusieurs particules par mouvement, dispersées autour du curseur
+  for(let i = 0; i < 3; i++){
+    spawnParticle(e.clientX, e.clientY);
+  }
+});
+
+function animateParticles(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    p.speedX += p.drift;
+    p.x += p.speedX;
+    p.y += p.speedY;
+    p.radius += 0.75;
+    p.life -= 0.015;
+
+    const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
+    gradient.addColorStop(0, `rgba(224, 229, 236, ${p.life * 0.28})`);
+    gradient.addColorStop(1, `rgba(224, 229, 236, 0)`);
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = gradient;
+    ctx.fill();
+  });
+
+  particles = particles.filter(p => p.life > 0);
+
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
