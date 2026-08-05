@@ -140,3 +140,55 @@ function animateParticles(){
   requestAnimationFrame(animateParticles);
 }
 animateParticles();
+
+// ---------- COMPÉTENCES : DONNÉES ----------
+const skills = [
+  { name: "Java", category: "backend", icon: "openjdk", url: "https://www.java.com" },
+  { name: "Spring Boot", category: "backend", icon: "springboot", url: "https://spring.io/projects/spring-boot" },
+  { name: "Hibernate / JPA", category: "backend", icon: "hibernate", url: "https://hibernate.org" },
+  { name: "Angular", category: "frontend", icon: "angular", url: "https://angular.dev" },
+  { name: "TypeScript", category: "frontend", icon: "typescript", url: "https://www.typescriptlang.org" },
+  { name: "RxJS", category: "frontend", icon: "reactivex", url: "https://rxjs.dev" },
+  { name: "PostgreSQL", category: "database", icon: "postgresql", url: "https://www.postgresql.org" },
+  { name: "Firebird", category: "database", icon: "firebird", url: "https://firebirdsql.org" },
+  { name: "SQL", category: "database", icon: "sqlite", url: "#" },
+  { name: "Docker", category: "devops", icon: "docker", url: "https://www.docker.com" },
+  { name: "Git", category: "devops", icon: "git", url: "https://git-scm.com" },
+  { name: "IntelliJ IDEA", category: "devops", icon: "intellijidea", url: "https://www.jetbrains.com/idea" }
+];
+
+// ---------- COMPÉTENCES : AFFICHAGE ----------
+const skillsGrid = document.getElementById('skillsGrid');
+const filterBtns = document.querySelectorAll('.filter-btn');
+
+function renderSkills(filter){
+  skillsGrid.innerHTML = '';
+
+  const filtered = filter === 'all'
+    ? skills
+    : skills.filter(s => s.category === filter);
+
+  filtered.forEach(s => {
+    const card = document.createElement('a');
+    card.className = 'skill-card';
+    card.href = s.url;
+    card.target = '_blank';
+    card.rel = 'noopener';
+    card.innerHTML = `
+      <img src="https://cdn.simpleicons.org/${s.icon}/e0e5ec" alt="${s.name}" loading="lazy">
+      <div class="skill-name">${s.name}</div>
+      <div class="skill-cat">${s.category}</div>
+    `;
+    skillsGrid.appendChild(card);
+  });
+}
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderSkills(btn.dataset.filter);
+  });
+});
+
+renderSkills('all');
