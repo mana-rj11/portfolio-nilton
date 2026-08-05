@@ -396,3 +396,61 @@ nav a:hover{
   border-color: #dbe1ea;
   color: var(--rail-navy);
 }
+
+/* ---------- CONTACT ---------- */
+.contact{
+  padding: 100px 5vw 60px;
+  background: var(--rail-navy);
+  color: var(--paper);
+}
+
+.contact .section-title{
+  color: var(--paper);
+}
+
+.contact-grid{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-end;
+}
+
+.contact-links{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-links a{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.2s ease;
+}
+
+.contact-links a:hover{
+  color: var(--signal-amber);
+}
+
+.contact-links a span{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--steel);
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  padding: 28px 5vw;
+  background: var(--rail-navy-deep);
+  color: var(--steel);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}

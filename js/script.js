@@ -63,3 +63,9 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ---------- BOUTON CV (placeholder) ----------
+document.getElementById('cvBtn').addEventListener('click', (e) => {
+  e.preventDefault();
+  alert("Ajoute ici le lien vers ton CV en PDF, ex: href='cv-nilton-mana.pdf'");
+});
