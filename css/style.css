@@ -454,3 +454,37 @@ footer{
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/* ---------- RESPONSIVE NAV ---------- */
+.nav-toggle{
+  display: none;
+  background: none;
+  border: none;
+  color: var(--paper);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+@media (max-width: 820px){
+  .nav-toggle{
+    display: block;
+  }
+
+  nav{
+    position: fixed;
+    top: 62px;
+    left: 0;
+    right: 0;
+    background: var(--rail-navy-deep);
+    flex-direction: column;
+    padding: 20px 5vw;
+    gap: 16px;
+    transform: translateY(-140%);
+    transition: transform 0.3s ease;
+    border-bottom: 1px solid rgba(242, 244, 247, 0.14);
+  }
+
+  nav.open{
+    transform: translateY(0);
+  }
+}
