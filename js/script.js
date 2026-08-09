@@ -154,7 +154,11 @@ const skills = [
   { name: "SQL", category: "database", icon: "sqlite", url: "#" },
   { name: "Docker", category: "devops", icon: "docker", url: "https://www.docker.com" },
   { name: "Git", category: "devops", icon: "git", url: "https://git-scm.com" },
-  { name: "IntelliJ IDEA", category: "devops", icon: "intellijidea", url: "https://www.jetbrains.com/idea" }
+  { name: "GitHub", category: "devops", icon: "github", url: "https://github.com" },
+  { name: "GitHub Desktop", category: "devops", icon: "github", url: "https://desktop.github.com" },
+  { name: "IntelliJ IDEA", category: "devops", icon: "intellijidea", url: "https://www.jetbrains.com/idea" },
+  { name: "Eclipse", category: "devops", icon: "eclipseide", url: "https://www.eclipse.org" },
+  { name: "VS Code", category: "devops", icon: "visualstudiocode", url: "https://code.visualstudio.com" }
 ];
 
 // ---------- COMPÉTENCES : AFFICHAGE ----------
