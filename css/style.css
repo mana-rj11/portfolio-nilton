@@ -555,3 +555,22 @@ footer{
   pointer-events: none;
   z-index: 9999;
 }
+
+/* ---------- ANIMATION DIRECTIONNELLE DU FILTRE ---------- */
+@keyframes slideInFromLeft{
+  from{ opacity: 0; transform: translateX(-28px); }
+   to{ opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight{
+  from{ opacity: 0; transform: translateX(28px); }
+  to{ opacity: 1; transform: translateX(0); }
+}
+
+.skills-grid.enter-ltr{
+  animation: slideInFromLeft 0.4s ease forwards;
+}
+
+.skills-grid.enter-rtl{
+  animation: slideInFromRight 0.4s ease forwards;
+}

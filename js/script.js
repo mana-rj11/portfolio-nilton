@@ -156,9 +156,9 @@ const skills = [
   { name: "Git", category: "devops", icon: "git", url: "https://git-scm.com" },
   { name: "GitHub", category: "devops", icon: "github", url: "https://github.com" },
   { name: "GitHub Desktop", category: "devops", icon: "github", url: "https://desktop.github.com" },
-  { name: "IntelliJ IDEA", category: "devops", icon: "intellijidea", url: "https://www.jetbrains.com/idea" },
-  { name: "Eclipse", category: "devops", icon: "eclipseide", url: "https://www.eclipse.org" },
-  { name: "VS Code", category: "devops", icon: "visualstudiocode", url: "https://code.visualstudio.com" }
+  { name: "IntelliJ IDEA", category: "tools", icon: "intellijidea", url: "https://www.jetbrains.com/idea" },
+  { name: "Eclipse", category: "tools", icon: "eclipseide", url: "https://www.eclipse.org" },
+  { name: "VS Code", category: "tools", icon: "visualstudiocode", url: "https://code.visualstudio.com" }
 ];
 
 // ---------- COMPÉTENCES : AFFICHAGE ----------
@@ -187,12 +187,31 @@ function renderSkills(filter){
   });
 }
 
+const filterOrder = ['all', 'backend', 'frontend', 'database', 'devops', 'tools'];
+let currentFilterIndex = 0; //"all" est en position 0 au départ
+
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
+    const clickedFilter = btn.dataset.filter;
+    const newIndex = filterOrder.indexOf(clickedFilter);
+
+    if(newIndex === currentFilterIndex) return;   //déja sur le filtre
+
+    const direction = newIndex > currentFilterIndex ? 'ltr' : 'rtl';
+
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    renderSkills(btn.dataset.filter);
-  });
-});
+
+    renderSkills(clickedFilter);
+
+    // force le navigateur a "oublier" une éventuelle animation précédente,
+    // pour pouvoir la relancer même avec la même classe
+    skillsGrid.classList.remove('enter-ltr', 'enter-rtl');
+    void skillsGrid.offsetWidth;  // force un reflow
+    skillsGrid.classList.add(direction === 'ltr' ? 'enter-ltr' : 'enter-rtl'); 
+
+    currentFilterIndex = newIndex;
+  })
+})
 
 renderSkills('all');
