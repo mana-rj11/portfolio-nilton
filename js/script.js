@@ -4,6 +4,8 @@ const target = "NILTON MANA";
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 const flapEls = [];
 
+
+
 // 1 générer une "case" (div) par lettre du nom
 target.split("").forEach(ch => {
     const el = document.createElement('div');
@@ -12,6 +14,31 @@ target.split("").forEach(ch => {
     boardEl.appendChild(el);
     flapEls.push(el);
 });
+
+// ---------- Animation de battement -------------
+function shuffleFlap(el, finalChar, delay){
+  if(finalChar === ' ') return;
+
+  let ticks = 8 + Math.floor(Math.random() * 6);
+  let i = 0;
+
+  setTimeout(() => {
+    const interval = setInterval(() => {
+      el.textContent = chars[Math.floor(Math.random() * chars.length)];
+      i++;
+      if(i > ticks){
+        clearInterval(interval);
+        el.textContent = finalChar;
+      }
+    }, 45);
+  }, delay);
+}
+
+function playBoard(){
+  flapEls.forEach((el, idx) => shuffleFlap(el, target[idx], idx * 70));
+}
+
+playBoard();
 
 // ---------- MACHINE À ÉCRIRE : RÔLES ----------
 const roles = [
