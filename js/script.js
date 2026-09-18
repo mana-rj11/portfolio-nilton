@@ -152,7 +152,7 @@ const skills = [
   { name: "TypeScript", category: "frontend", icon: "typescript", url: "https://www.typescriptlang.org" },
   { name: "RxJS", category: "frontend", icon: "reactivex", url: "https://rxjs.dev" },
   { name: "PostgreSQL", category: "database", icon: "postgresql", url: "https://www.postgresql.org" },
-  { name: "Firebird", category: "database", icon: "firebird", url: "https://firebirdsql.org" },
+  { name: "Firebird", category: "database", icon: "", url: "https://firebirdsql.org" },
   { name: "SQL", category: "database", icon: "sqlite", url: "#" },
   { name: "Docker", category: "devops", icon: "docker", url: "https://www.docker.com" },
   { name: "Git", category: "devops", icon: "git", url: "https://git-scm.com" },
@@ -160,12 +160,11 @@ const skills = [
   { name: "GitHub Desktop", category: "devops", icon: "github", url: "https://desktop.github.com" },
   { name: "IntelliJ IDEA", category: "tools", icon: "intellijidea", url: "https://www.jetbrains.com/idea" },
   { name: "Eclipse", category: "tools", icon: "eclipseide", url: "https://www.eclipse.org" },
-  { name: "VS Code", category: "tools", icon: "visualstudiocode", url: "https://code.visualstudio.com" },
+  { name: "VS Code", category: "tools", icon: "", url: "https://code.visualstudio.com" },
   { name: "PyCharm", category: "tools", icon: "pycharm", url: "https://www.jetbrains.com/pycharm" },
   { name: "WebStorm", category: "tools", icon: "webstorm", url: "https://www.jetbrains.com/webstorm" },
   { name: "LaTeX", category: "tools", icon: "latex", url: "https://www.latex-project.org" },
-  { name: "LyX", category: "tools", icon: "lyx", url: "https://www.lyx.org" }
-];
+  { name: "LyX", category: "tools", icon: "", url: "https://www.lyx.org" }];
 
 // ---------- COMPÉTENCES : AFFICHAGE ----------
 const skillsGrid = document.getElementById('skillsGrid');
@@ -184,8 +183,13 @@ function renderSkills(filter){
     card.href = s.url;
     card.target = '_blank';
     card.rel = 'noopener';
+
+    const iconHTML = s.icon
+    ? `<img src="https://cdn.simpleicons.org/${s.icon}/e0e5ec" alt="${s.name}" loading="lazy">`
+    : `<div class="skill-fallback-icon">${s.name.charAt(0)}</div>`;
+
     card.innerHTML = `
-      <img src="https://cdn.simpleicons.org/${s.icon}/e0e5ec" alt="${s.name}" loading="lazy">
+      ${iconHTML}
       <div class="skill-name">${s.name}</div>
       <div class="skill-cat">${s.category}</div>
     `;
