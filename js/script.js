@@ -148,6 +148,7 @@ const skills = [
   { name: "Hibernate / JPA", category: "backend", icon: "hibernate", url: "https://hibernate.org" },
   { name: "Python", category: "backend", icon: "python", url: "https://www.python.org" },
   { name: "Angular", category: "frontend", icon: "angular", url: "https://angular.dev" },
+  { name: "React", category: "frontend", icon: "react", url: "https://react.dev" },
   { name: "TypeScript", category: "frontend", icon: "typescript", url: "https://www.typescriptlang.org" },
   { name: "RxJS", category: "frontend", icon: "reactivex", url: "https://rxjs.dev" },
   { name: "PostgreSQL", category: "database", icon: "postgresql", url: "https://www.postgresql.org" },
