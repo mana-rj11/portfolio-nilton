@@ -73,7 +73,7 @@ nav a:hover{
     color: var(--signal-amber);
 }
 
-/* ---------- HERO ---------- */
+/* ---------- HERO ---------- 
 .hero{
     min-height: 90vh;
     background: linear-gradient(180deg, var(--rail-navy) 0%, var(--rail-navy-deep) 100%);
@@ -83,6 +83,48 @@ nav a:hover{
     justify-content: center;
     padding: 60px 5vw;
 }
+
+*/
+
+/* ---------- RAILS EN ARRIÈRE-PLAN ---------- */
+.hero{
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 5vw;
+  color: var(--paper);
+  overflow: hidden;
+
+  background-image: linear-gradient(180deg, rgba(11, 37, 69, 0.72) 0%, rgba(7, 26, 51, 0.85) 100%),
+  url("https://images.unsplash.com/photo-1759397717632-b2586fef0e17?fm=jpg&q=70&w=2000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+}
+
+.rail-tracks{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.rail-tracks .rail{
+  stroke: var(--signal-amber);
+  stroke-width: 2;
+  fill: none;
+}
+
+.rail-tracks .sleepers line{
+  stroke: var(--steel);
+  stroke-width: 1.5;
+  opacity: 0.5;
+}
+
 
 .platform-tag{
     font-family: 'IBM Plex Mono', monospace;
@@ -261,9 +303,16 @@ nav a:hover{
 
 /* ---------- SKILLS ---------- */
 .skills{
+  position: relative;
   padding: 100px 5vw;
-  background: var(--rail-navy-deep);
   color: var(--paper);
+  overflow: hidden;
+
+
+  background-image: linear-gradient(180deg, rgba(7, 26, 51, 0.72) 0%, rgba(7, 26, 51, 0.85) 100%),
+  url("https://images.unsplash.com/photo-1767001621614-2c53406fd050?fm=jpg&q=70&w=2000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
 }
 
 .skills .section-title{
@@ -387,8 +436,15 @@ nav a:hover{
 
 /* ---------- PROJECTS ---------- */
 .projects{
+  position: relative; 
   padding: 100px 5vw;
-  background: var(--paper);
+  overflow: hidden;
+
+
+  background-image: linear-gradient(180deg, rgba(242, 244, 247, 0.72) 0%, rgba(242, 244, 247, 0.85) 100%),
+  url("https://images.unsplash.com/photo-1664493739612-2103f4003685?fm=jpg&q=70&w=2000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
 }
 
 .project-grid{
@@ -458,9 +514,16 @@ nav a:hover{
 
 /* ---------- CONTACT ---------- */
 .contact{
+  position: relative;
   padding: 100px 5vw 60px;
-  background: var(--rail-navy);
   color: var(--paper);
+  overflow: hidden;
+
+
+  background-image: linear-gradient(180deg, rgba(11, 37, 69, 0.72) 0%, rgba(11, 37, 69, 0.85) 100%),
+  url("https://images.unsplash.com/photo-1767001621614-2c53406fd050?fm=jpg&q=70&w=2000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
 }
 
 .contact .section-title{
