@@ -160,7 +160,11 @@ const skills = [
   { name: "GitHub Desktop", category: "devops", icon: "github", url: "https://desktop.github.com" },
   { name: "IntelliJ IDEA", category: "tools", icon: "intellijidea", url: "https://www.jetbrains.com/idea" },
   { name: "Eclipse", category: "tools", icon: "eclipseide", url: "https://www.eclipse.org" },
-  { name: "VS Code", category: "tools", icon: "visualstudiocode", url: "https://code.visualstudio.com" }
+  { name: "VS Code", category: "tools", icon: "visualstudiocode", url: "https://code.visualstudio.com" },
+  { name: "PyCharm", category: "tools", icon: "pycharm", url: "https://www.jetbrains.com/pycharm" },
+  { name: "WebStorm", category: "tools", icon: "webstorm", url: "https://www.jetbrains.com/webstorm" },
+  { name: "LaTeX", category: "tools", icon: "latex", url: "https://www.latex-project.org" },
+  { name: "LyX", category: "tools", icon: "lyx", url: "https://www.lyx.org" }
 ];
 
 // ---------- COMPÉTENCES : AFFICHAGE ----------
