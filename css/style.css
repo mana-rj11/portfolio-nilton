@@ -541,7 +541,51 @@ nav a:hover{
 .contact-links{
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.contact-card{
+  display: flex;
+  align-items: center;
   gap: 16px;
+  padding: 16px 20px;
+  background: rgba(242, 244, 247, 0.05);
+  border: 1px solid rgba(242, 244, 247, 0.12);
+  border-radius: 10px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-card:hover{
+  transform: translateX(6px);
+  border-color: var(--signal-amber);
+  background: rgba(242, 244, 247, 0.09);
+}
+
+.contact-icon{
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.contact-card div{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-label{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--steel);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-value{
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--paper);
 }
 
 .contact-links a{
@@ -651,4 +695,20 @@ footer{
   font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 1rem;
+}
+
+.contact-icon-fallback{
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 166, 35, 0.15);
+  color: var(--signal-amber);
+  border-radius: 6px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: lowercase;
 }
