@@ -143,6 +143,16 @@ window.addEventListener('mousemove', (e) => {
   }
 });
 
+window.addEventListener('touchmove', (e) => {
+  // scrolling
+  const touch = e.touches[0];
+  if(!touch) return;
+
+  for(let i = 0; i < 3; i++){
+    spawnParticle(touch.clientX, touch.clientY);
+  }
+}, {passive: true});
+
 function animateParticles(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
