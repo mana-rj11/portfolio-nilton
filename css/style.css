@@ -712,3 +712,77 @@ footer{
   font-size: 0.7rem;
   text-transform: lowercase;
 }
+
+/* -- Photo -- */
+.about-photo{
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid var(--signal-amber);
+  margin-bottom: 24px;
+}
+
+/* -- Timeline -- */
+.timeline{
+  margin-top: 60px;
+  position: relative;
+  padding-left: 28px;
+  border-left: 2px solid rgba(11, 37, 69, 0.15);
+}
+
+.timeline-item{
+  position: relative;
+  padding-bottom: 32px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 4px 16px;
+}
+
+.timeline-item:last-child{
+  padding-bottom: 0;
+}
+
+.timeline-dot{
+  position: absolute;
+  left: -34px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var (--rail-navy);
+}
+
+.timeline-dot.active{
+  background: var(--signal-amber);
+  border-color: var(--signal-amber);
+  box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.2);
+}
+
+.timeline-year{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--brake-red);
+  grid-column: 1;
+}
+
+.timeline-title{
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  grid-column: 2;
+  color: var(--rail-navy-deep);
+}
+
+.timeline-org{
+  font-size: 0.88rem;
+  color: #5a6c85;
+  grid-column: 2;
+}
+
+@media (max-width: 600px) {
+  .timeline-item{
+    grid-template-columns: 1fr;
+  }
+}
