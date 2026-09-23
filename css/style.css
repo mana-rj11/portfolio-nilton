@@ -786,3 +786,40 @@ footer{
     grid-template-columns: 1fr;
   }
 }
+
+/* -- card actions */
+.card-actions{
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e8ecf1;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--rail-navy);
+  transition: color 0.2s ease;
+}
+
+.card-link:hover{
+  color: var(--brake-red);
+}
+
+.card-link-icon{
+  width: 14px;
+  height: 14px;
+}
+
+.card-status{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--steel);
+  font-style: italic;
+}
