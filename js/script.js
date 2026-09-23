@@ -273,9 +273,10 @@ document.querySelectorAll('.card-link').forEach(link => {
 
     link.classList.add('launching');
 
-    const train = document.createElement('span');
+    const train = document.createElement('img');
     train.className = 'train-emoji';
-    train.textContent = '🚆';
+    train.src = 'assets/train-icon.png';
+    train.alt = ';'
     link.appendChild(train);
 
     setTimeout(() => {

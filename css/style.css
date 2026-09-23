@@ -840,9 +840,9 @@ footer{
   left: -24px;
   top: 60%;
   transform: translateY(-50%);
-  font-size: 1rem;
+  width: 18px;
+  height: 18px;
   animation: trainDepart 1.6s ease-in forwards;
-  color: initial;
 }
 
 @keyframes trainDepart{
