@@ -263,3 +263,25 @@ filterBtns.forEach(btn => {
 })
 
 renderSkills('all');
+
+/** Anim train au clic */
+document.querySelectorAll('.card-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if(link.classList.contains('launching')) return; // déja en cours, ignore
+
+    link.classList.add('launching');
+
+    const train = document.createElement('span');
+    train.className = 'train-emoji';
+    train.textContent = '🚆';
+    link.appendChild(train);
+
+    setTimeout(() => {
+      window.open(link.href, '_blank', 'nooponer');
+      link.classList.remove('launching');
+      train.remove();
+    }, 900);
+  });
+});

@@ -823,3 +823,39 @@ footer{
   color: var(--steel);
   font-style: italic;
 }
+
+/** Anim train au clic */
+.card-link{
+  position: relative;
+  overflow: hidden;
+}
+
+.card-link.launching{
+  color: transparent;
+  pointer-events: none;
+}
+
+.train-emoji{
+  position: absolute;
+  left: -24px;
+  top: 60%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  animation: trainDepart 1.6s ease-in forwards;
+  color: initial;
+}
+
+@keyframes trainDepart{
+  0%{
+    left: -24px;
+    opacity: 1;
+  }
+  85%{
+    opacity: 1;
+  }
+  100%{
+    left: 110%;
+    opacity: 0;
+  }
+}
+
