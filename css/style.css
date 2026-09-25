@@ -781,6 +781,13 @@ footer{
   grid-column: 2;
 }
 
+@media (max-width: 780px) {
+  .about-grid{
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 @media (max-width: 600px) {
   .timeline-item{
     grid-template-columns: 1fr;
@@ -858,4 +865,5 @@ footer{
     opacity: 0;
   }
 }
+
 
